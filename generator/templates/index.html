@@ -1,0 +1,32 @@
+{% load qr_code %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>QR Code Generator</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+        rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+        crossorigin="anonymous">
+</head>
+<body>
+  <div class="container shadow"
+       style="width: 400px; margin-top: 5em; padding: 2em">
+    <form style="text-align:center" enctype="multipart/form-data" method="POST" action="">      
+      {% csrf_token %}
+      {{form.as_p}}     
+      <div class="input-group mb-3">
+        <input type="submit" style="max-width: 200px; margin: auto" class="form-control" value="QR-CODE yasash" >
+      </div>  
+    </form>
+    
+      <div class="input-group mb-3">
+        <div style="margin: auto">
+          <img src="{% qr_url_from_text last_file options=my_options %}" alt="Hello World!">          
+        </div>         
+      </div>
+      <div>
+        <a class="btn btn-primary" role="button" href="{% qr_url_from_text text options=my_options %}" download="donwload">Yuklab olish</a>
+      </div>
+  </div></body>
+</html>

@@ -28,7 +28,11 @@
       {% if last_file%}        
         <div style="margin: auto">
           <img src="{% qr_url_from_text last_file options=my_options %}" alt="Hello World!">          
-        </div>         
+        </div>      
+      {% else %}   
+        <div style="margin: auto">
+          <img src="{% qr_url_from_text last_file options=my_options %}" alt="Hello World!">          
+        </div> 
       {% endif %}
     </div>
       <div class="text-center">

@@ -32,7 +32,9 @@
       {% endif %}
     </div>
       <div class="text-center">
-        <a class="btn btn-primary" role="button" href="{% qr_url_from_text last_file options=my_options %}" download="{{name}}">Yuklab olish</a>
+        {% if last_file %}
+          <a class="btn btn-primary" role="button" href="{% qr_url_from_text last_file options=my_options %}" download="{{name}}">Yuklab olish</a>
+        {% endif %}
       </div>
   </div>
 </body>

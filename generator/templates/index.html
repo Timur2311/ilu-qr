@@ -16,10 +16,10 @@
   <div class="container shadow"
        style="width: 400px; margin-top: 1em; padding: 2em">
        
-    <form style="text-align:center" enctype="multipart/form-data" method="POST" action="">      
-      {% csrf_token %}
-      {{form.as_p}}     
+    <form style="text-align:center" enctype="multipart/form-data" method="POST" action="">          
       <div class="input-group mb-3 text-center">
+        {% csrf_token %}
+        {{form.as_p}} 
         <input type="submit" style="max-width: 200px; margin: auto" class="form-control" value="QR-code yasash" >
       </div>  
     </form>

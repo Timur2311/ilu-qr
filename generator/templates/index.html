@@ -19,13 +19,13 @@
     <form style="text-align:center" enctype="multipart/form-data" method="POST" action="">      
       {% csrf_token %}
       {{form.as_p}}     
-      <div class="input-group mb-3">
+      <div class="input-group mb-3 text-center">
         <input type="submit" style="max-width: 200px; margin: auto" class="form-control" value="QR-code yasash" >
       </div>  
     </form>
     
     <div class="input-group mb-3">
-      {% if last_file%}        
+      {% if last_file %}        
         <div style="margin: auto">
           <img src="{% qr_url_from_text last_file options=my_options %}" alt="Hello World!">          
         </div>      

@@ -10,13 +10,20 @@
         crossorigin="anonymous">
 </head>
 <body>
+  <div class="container">
+    <div class="row">
+      <h1 class="h1">
+        Information Land Use
+      </h1>
+    </div>
+  </div>
   <div class="container shadow"
        style="width: 400px; margin-top: 5em; padding: 2em">
     <form style="text-align:center" enctype="multipart/form-data" method="POST" action="">      
       {% csrf_token %}
       {{form.as_p}}     
       <div class="input-group mb-3">
-        <input type="submit" style="max-width: 200px; margin: auto" class="form-control" value="QR-CODE yasash" >
+        <input type="submit" style="max-width: 200px; margin: auto" class="form-control" value="QR-code yasash" >
       </div>  
     </form>
     
@@ -28,5 +35,6 @@
       <div>
         <a class="btn btn-primary" role="button" href="{% qr_url_from_text text options=my_options %}" download="donwload">Yuklab olish</a>
       </div>
-  </div></body>
+  </div>
+</body>
 </html>

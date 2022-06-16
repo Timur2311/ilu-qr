@@ -22,5 +22,6 @@ def index(request):
         my_options=QRCodeOptions(size="T",image_format="png", error_correction='L'),
         form = form,
         last_file = file_url,
+        name = name,
     )
     return render(request, 'index.html', context = context)

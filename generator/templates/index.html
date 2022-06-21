@@ -76,10 +76,16 @@ color: #DE9C9E;
     
 </div>
 <!--Script-->
+<script type="text/javascript" src="scripts/jquery.cookies.2.2.0.min.js"></script> 
 <script type="text/javascript">
 window.addEventListener("load", function(){
   if(localStorage.getItem('popState') != 'shown'){
-    $j('#popup').delay(2000).fadeIn();
+    setTimeout(
+    function open(event){
+        document.querySelector(".popup").style.display = "block";
+    },
+    100000
+)
     localStorage.setItem('popState','shown')
 }
 

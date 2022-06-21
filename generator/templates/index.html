@@ -19,6 +19,7 @@
   box-sizing: border-box;
 }
 
+
 #popup{
   background-color: #F2DEDF;
   width: 600px;
@@ -67,7 +68,7 @@ color: #DE9C9E;
 <body>
 
   <div id="popup">
-    <button id="popoup-close">&times;</button>
+    <button id="#popup-close">&times;</button>
     <h2>Eslatma !</h2>
     <p>
         Ushbu websayt Tashbayeva Hulkaroy Xolmurod qiziga tegishli. Mualliflik huquqi himoyalangan.
@@ -76,20 +77,17 @@ color: #DE9C9E;
 </div>
 <!--Script-->
 <script type="text/javascript">
-
-$j(document).ready(function() {
+window.addEventListener("load", function(){
   if(localStorage.getItem('popState') != 'shown'){
-      $j('#popup').delay(2000).fadeIn();
-      localStorage.setItem('popState','shown')
-  }
+    $j('#popup').delay(2000).fadeIn();
+    localStorage.setItem('popState','shown')
+}
 
-  $j('#popup-close, #popup').click(function() // You are clicking the close button
-  {
-      $j('#popup').fadeOut(); // Now the pop up is hidden.
-  });
+$j('#popup-close, #popup').click(function() // You are clicking the close button
+{
+    $j('#popup').fadeOut(); // Now the pop up is hidden.
 });
-
-
+});
 
 
 document.querySelector("#close").addEventListener("click", function(){

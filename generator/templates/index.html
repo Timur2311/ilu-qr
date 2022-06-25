@@ -68,8 +68,8 @@ color: #DE9C9E;
 
 <body>
 
-  <div id="popup">
-    <button id="#popup-close">&times;</button>
+  <div class="popup">
+    <button id="close">&times;</button>
     <h2>Eslatma !</h2>
     <p>
         Ushbu websayt Tashbayeva Hulkaroy Xolmurod qiziga tegishli. Mualliflik huquqi himoyalangan.
@@ -79,28 +79,20 @@ color: #DE9C9E;
 <!--Script-->
 <script type="text/javascript" src="scripts/jquery.cookies.2.2.0.min.js"></script> 
 <script type="text/javascript">
-  $(document).ready(function() {
-    if(localStorage.getItem('popState') != 'shownn'){
-        $("#popup").delay(2000).fadeIn();
-        localStorage.setItem('popState','shownn')
-    }
-
-    $('#popup-close').click(function(e) // You are clicking the close button
-    {
-    $('#popup').fadeOut(); // Now the pop up is hiden.
-    });
-    $('#popup').click(function(e) 
-    {
-    $('#popup').fadeOut(); 
-    });
-});
-
-
-{% comment %} document.querySelector("#close").addEventListener("click", function(){
-document.querySelector(".popup").style.display = "none";
-}); {% endcomment %}
-</script>
-
+  window.addEventListener("load", function(){
+      setTimeout(
+          function open(event){
+              document.querySelector(".popup").style.display = "block";
+          },
+          2000 
+      )
+  });
+  
+  
+  document.querySelector("#close").addEventListener("click", function(){
+      document.querySelector(".popup").style.display = "none";
+  });
+      </script>
   <h1 class="h1" style="text-align: center; margin-top: 50px">
     Information Land Use
   </h1>

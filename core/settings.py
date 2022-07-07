@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-hzu3q3+^dt**v0
 # DEBUG = False
 DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
-ALLOWED_HOSTS = ["ilu-qr.uz","www.ilu-qr.uz"]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition

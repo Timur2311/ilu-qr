@@ -19,6 +19,8 @@ from generator import views
 from django.conf import settings
 from django.conf.urls.static import static
 
+app_name="main"
+
 urlpatterns = [    
     path('',views.index, name="home"),
     path('qr_code/', include('qr_code.urls', namespace="qr_code")),

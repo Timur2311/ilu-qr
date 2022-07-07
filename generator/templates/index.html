@@ -99,7 +99,7 @@ color: #DE9C9E;
   <div class="container shadow"
        style="width: 400px; margin-top: 1em; padding: 2em">
        
-    <form style="text-align:center" enctype="multipart/form-data" method="POST" action="">          
+    <form style="text-align:center" enctype="multipart/form-data" method="POST" action="{% url "main:home" %}">          
       <div class="input-group mb-3 text-center">
         {% csrf_token %}
         {{form.as_p}} 
